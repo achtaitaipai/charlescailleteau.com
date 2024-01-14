@@ -116,7 +116,7 @@ a {
 /* UTILS */
 .wrapper {
 	width: clamp(20rem, 80vw, 70rem);
-	padding-inline: var(--space-s);
+	padding-inline: var(--space-3xs);
 	margin-inline: auto;
 }
 

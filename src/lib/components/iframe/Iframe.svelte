@@ -40,7 +40,8 @@
 	.project-wrapper {
 		position: relative;
 		width: 100%;
-		height: min(90vmin, 60rem);
+		height: auto;
+		aspect-ratio: 16 / 9;
 	}
 	.iframe-wrapper {
 		padding: var(--space-s);
@@ -71,7 +72,7 @@
 		color: inherit;
 		border: 2px solid var(--primary);
 		border-top: none;
-		padding: var(--space-2xs);
+		padding: var(--space-3xs);
 		cursor: pointer;
 	}
 	button svg {

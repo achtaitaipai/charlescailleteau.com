@@ -12,12 +12,19 @@
 
 <style>
 	div {
+		display: none;
+	}
+	@media (min-width: 50rem) {
+		div {
+			display: flex;
+		}
+	}
+	div {
 		position: absolute;
 		bottom: 0;
 		left: 50%;
 		transform: translate(-50%, 0);
 		background: var(--surface);
-		display: flex;
 		flex-direction: column;
 		gap: var(--space-xs);
 		padding-block: var(--space-s);

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { clamp } from '$lib';
 	import { tweened } from 'svelte/motion';
 
 	type Vector = [number, number];
@@ -6,23 +7,28 @@
 	let eyeOffset = tweened(50, { duration: 300 });
 	let direction: Vector = [0, 0];
 	let distanceFactor = 0;
-
+	let mousePosition: Vector;
 	let svgElement: SVGElement;
 
-	const handleMouseMove = (e: MouseEvent) => {
-		const mousePosition: Vector = [e.clientX, e.clientY];
-		const { left, top, width, height } = svgElement.getBoundingClientRect();
-		const eyePosition: Vector = [left + width * 0.5, top + height * 0.5];
+	$: {
+		if (svgElement?.getBoundingClientRect && mousePosition) {
+			const { left, top, width, height } = svgElement.getBoundingClientRect();
+			const eyePosition: Vector = [left + width * 0.5, top + height * 0.5];
 
-		const vectorBetween: Vector = [
-			mousePosition[0] - eyePosition[0],
-			mousePosition[1] - eyePosition[1]
-		];
-		const distanceBetween = Math.sqrt(
-			vectorBetween[0] * vectorBetween[0] + vectorBetween[1] * vectorBetween[1]
-		);
-		direction = [vectorBetween[0] / distanceBetween, vectorBetween[1] / distanceBetween];
-		distanceFactor = distanceBetween / document.body.clientWidth;
+			const vectorBetween: Vector = [
+				mousePosition[0] - eyePosition[0],
+				mousePosition[1] - eyePosition[1]
+			];
+			const distanceBetween = Math.sqrt(
+				vectorBetween[0] * vectorBetween[0] + vectorBetween[1] * vectorBetween[1]
+			);
+			direction = [vectorBetween[0] / distanceBetween, vectorBetween[1] / distanceBetween];
+			distanceFactor = clamp(distanceBetween / document.body.clientWidth, 0, 1);
+		}
+	}
+
+	const handleMouseMove = (e: MouseEvent) => {
+		mousePosition = [e.clientX, e.clientY];
 	};
 
 	const handleClick = async () => {
@@ -76,6 +82,7 @@
 			style="transform:translate({direction[0] * distanceFactor * 8}%,{direction[1] *
 				distanceFactor *
 				8}%)"
+			class="iris"
 		>
 			<circle cx="0" cy="0" r="18" fill="none" stroke="currentColor" stroke-width="5" />
 			<circle
@@ -97,10 +104,12 @@
 		background: transparent;
 		border: none;
 		cursor: pointer;
-		margin-inline-start: auto;
 		color: inherit;
 	}
 	svg {
 		font-size: var(--step-3);
+	}
+	.iris {
+		transition: transform 0.1s;
 	}
 </style>
