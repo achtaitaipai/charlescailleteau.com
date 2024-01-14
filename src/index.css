@@ -2,7 +2,7 @@
 	font-family: 'Quanty';
 	src:
 		local('Quanty'),
-		url('quanty.otf') format('opentype');
+		url('/quanty.otf') format('opentype');
 }
 /* VARIABLES */
 :root {
