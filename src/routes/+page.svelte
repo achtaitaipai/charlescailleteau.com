@@ -17,8 +17,8 @@
 				<p>Né en 1993 à Paris.</p>
 				<p>Je pense que le web est un merveilleux moyen de partager savoir et information.</p>
 				<p>
-					Mon expertise en design et en développement me permettra d'accompagner mes clients pour
-					concevoir le petit coin d'internet qui correspondra à ce qu'ils font et à ce qu'ils sont.
+					Mon expertise en design et en développement me permet d'accompagner mes clients pour
+					concevoir le petit coin d'internet qui correspond à ce qu'ils font et à ce qu'ils sont.
 				</p>
 			</div>
 		</div>
@@ -101,7 +101,7 @@
 	.description {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-end;
 		height: 100%;
 		max-width: 66ch;
 		align-self: flex-end;
@@ -129,5 +129,6 @@
 		font-size: var(--step-3);
 		margin-inline: auto;
 		text-align: justify;
+		line-height: 1.2;
 	}
 </style>
