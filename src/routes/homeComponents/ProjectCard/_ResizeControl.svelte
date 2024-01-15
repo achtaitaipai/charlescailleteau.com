@@ -16,7 +16,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: var(--space-2xs);
+		gap: var(--space-xs);
 		width: min(80%, 20rem);
 		margin-inline: auto;
 		background: var(--surface);
@@ -43,24 +43,26 @@
 		background: transparent;
 		cursor: pointer;
 		width: min(15rem, 90%);
+		/* touch-action: manipulation; */
+		-webkit-tap-highlight-color: transparent;
 	}
 	input:focus {
 		outline: none;
 	}
 	input::-webkit-slider-runnable-track {
 		background-color: currentColor;
-		height: 0.3rem;
+		height: 0.5rem;
 		border-radius: 0.15rem;
 	}
 	input::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
-		margin-top: -0.25rem;
+		margin-top: -0.35rem;
 		background-color: currentColor;
 		border: var(--text);
 		border-radius: 50%;
-		height: 0.8rem;
-		width: 0.8rem;
+		height: 1.2rem;
+		width: 1.2rem;
 	}
 
 	input:focus::-webkit-slider-thumb {
@@ -71,14 +73,14 @@
 	input::-moz-range-track {
 		background-color: currentColor;
 		border-radius: 0.15rem;
-		height: 0.3rem;
+		height: 0.5rem;
 	}
 	input::-moz-range-thumb {
 		border: none;
 		border-radius: 0;
 		background-color: currentColor;
-		height: 0.8rem;
-		width: 0.8rem;
+		height: 1.2rem;
+		width: 1.2rem;
 	}
 	input[type='range']:focus::-moz-range-thumb {
 		border: 1px solid currentColor;
