@@ -52,14 +52,15 @@
 	}
 	input::-webkit-slider-runnable-track {
 		background-color: currentColor;
-		height: 0.1rem;
+		height: 0.3rem;
+		border-radius: 0.15rem;
 	}
 
 	/* slider thumb */
 	input::-webkit-slider-thumb {
 		-webkit-appearance: none; /* Override default look */
 		appearance: none;
-		transform: translateY(-50%);
+		margin-top: -0.25rem;
 
 		/*custom styles*/
 		background-color: currentColor;
@@ -79,8 +80,8 @@
 	/* slider track */
 	input::-moz-range-track {
 		background-color: currentColor;
-		border-radius: 0.5rem;
-		height: 0.5rem;
+		border-radius: 0.15rem;
+		height: 0.3rem;
 	}
 
 	/* slider thumb */
@@ -89,7 +90,7 @@
 		border-radius: 0; /*Removes default border-radius that FF applies*/
 
 		/*custom styles*/
-		background-color: #5cd5eb;
+		background-color: currentColor;
 		height: 0.8rem;
 		width: 0.8rem;
 	}
