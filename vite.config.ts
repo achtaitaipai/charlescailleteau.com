@@ -1,5 +1,5 @@
-import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite';
 import { browserslistToTargets } from 'lightningcss';
 import browserslist from 'browserslist';
 

@@ -12,11 +12,11 @@
 					src="https://loeilalecoute.fr/"
 					title="L'oeil à l'écoute"
 					images={[
-						'images/sites/loeilalecoute0.png',
-						'images/sites/loeilalecoute1.png',
-						'images/sites/loeilalecoute2.png',
-						'images/sites/loeilalecoute3.png',
-						'images/sites/loeilalecoute4.png'
+						'images/sites/loeilalecoute0',
+						'images/sites/loeilalecoute1',
+						'images/sites/loeilalecoute2',
+						'images/sites/loeilalecoute3',
+						'images/sites/loeilalecoute4'
 					]}
 				>
 					<p>
@@ -31,11 +31,11 @@
 					src="https://arplastoc.com/"
 					title="Arplastoc"
 					images={[
-						'images/sites/arplastoc0.png',
-						'images/sites/arplastoc1.png',
-						'images/sites/arplastoc2.png',
-						'images/sites/arplastoc3.png',
-						'images/sites/arplastoc4.png'
+						'images/sites/arplastoc0',
+						'images/sites/arplastoc1',
+						'images/sites/arplastoc2',
+						'images/sites/arplastoc3',
+						'images/sites/arplastoc4'
 					]}
 				>
 					<p>
@@ -50,11 +50,11 @@
 					src="https://hadrientequi.net/"
 					title="Hadrien Tequi"
 					images={[
-						'images/sites/hadrientequi0.png',
-						'images/sites/hadrientequi1.png',
-						'images/sites/hadrientequi2.png',
-						'images/sites/hadrientequi3.png',
-						'images/sites/hadrientequi4.png'
+						'images/sites/hadrientequi0',
+						'images/sites/hadrientequi1',
+						'images/sites/hadrientequi2',
+						'images/sites/hadrientequi3',
+						'images/sites/hadrientequi4'
 					]}
 				>
 					<p>
@@ -69,11 +69,11 @@
 					src="https://prosper-merimee.com/"
 					title="Société mérimée"
 					images={[
-						'images/sites/prosper-merimee0.png',
-						'images/sites/prosper-merimee1.png',
-						'images/sites/prosper-merimee2.png',
-						'images/sites/prosper-merimee3.png',
-						'images/sites/prosper-merimee4.png'
+						'images/sites/prosper-merimee0',
+						'images/sites/prosper-merimee1',
+						'images/sites/prosper-merimee2',
+						'images/sites/prosper-merimee3',
+						'images/sites/prosper-merimee4'
 					]}
 				>
 					<p>
