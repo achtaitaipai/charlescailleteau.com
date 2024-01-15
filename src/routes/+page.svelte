@@ -20,10 +20,12 @@
 					]}
 				>
 					<p>
-						Pendant plus de 15 ans, l'association L'oeil à l'écoute a arpenté la Seine-Saint-Senis
-						pour permettre à ses habitants de réaliser des émissions radiophoniques. L'association a
-						cessé son activité en 2023. C'est à ce moment qu'elle m'a contacté pour réaliser un site
-						qui relate ses actions et donne accés ses émissions.
+						Pendant plus de 15 ans, l'association <a
+							href="https://loeilalecoute.fr/"
+							target="_blank">L'oeil à l'écoute</a
+						> a arpenté la Seine-Saint-Senis pour permettre à ses habitants de réaliser des émissions
+						radiophoniques. L'association a cessé son activité en 2023. C'est à ce moment qu'elle m'a
+						contacté pour réaliser un site qui relate ses actions et donne accés ses émissions.
 					</p>
 				</ProjectCard>
 			</div>
@@ -40,9 +42,10 @@
 					]}
 				>
 					<p>
-						Arplastoc a été réalisé pour une professeure d'arts plastiques. L'objectif était de
-						réaliser un site qui soit l'extension de sa salle de classe. Donnant accès aux séances
-						et aux travaux des élèves, c'est aussi un support pouvant servir pendant les cours.
+						<a href="https://arplastoc.com/" target="_blank">Arplastoc</a> a été réalisé pour une professeure
+						d'arts plastiques. L'objectif était de réaliser un site qui soit l'extension de sa salle
+						de classe. Donnant accès aux séances et aux travaux des élèves, c'est aussi un support pouvant
+						servir pendant les cours.
 					</p>
 				</ProjectCard>
 			</div>
@@ -59,9 +62,9 @@
 					]}
 				>
 					<p>
-						Hadrien Tequi est artiste plasticien. Il m'a contacté pour que je réalise son portfolio.
-						Le site devait avoir une identité forte, liée à son univers, mais ne pas parasiter la
-						présentation des oeuvres.
+						<a href="https://hadrientequi.net/" target="_blank">Hadrien Tequi</a> est artiste plasticien.
+						Il m'a contacté pour que je réalise son portfolio. Le site devait avoir une identité forte,
+						liée à son univers, mais ne pas parasiter la présentation des oeuvres.
 					</p>
 				</ProjectCard>
 			</div>
@@ -78,10 +81,10 @@
 					]}
 				>
 					<p>
-						La société Mérimée est composée d'universitaire spécialistes de l'auteur, soucieux de
-						permettre au plus grand nombre d'accéder à leurs travaux. L'objectif était de réaliser
-						un site facile à maintenir et utile tant aux spécialistes de l'oeuvre de Mérimée qu'aux
-						néophytes.
+						<a href="https://prosper-merimee.com/" target="_blank">La société Mérimée</a> est composée
+						d'universitaire spécialistes de l'auteur, soucieux de permettre au plus grand nombre d'accéder
+						à leurs travaux. L'objectif était de réaliser un site facile à maintenir et utile tant aux
+						spécialistes de l'oeuvre de Mérimée qu'aux néophytes.
 					</p>
 				</ProjectCard>
 			</div>
