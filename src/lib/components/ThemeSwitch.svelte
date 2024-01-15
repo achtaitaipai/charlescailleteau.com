@@ -10,6 +10,17 @@
 	let mousePosition: Vector;
 	let svgElement: SVGElement;
 
+	const getTheme = () => {
+		if (localStorage.getItem('theme-preference'))
+			return localStorage.getItem('theme-preference') === 'dark' ? 'dark' : 'light';
+		else return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+
+	const setTheme = (theme: string) => {
+		localStorage.setItem('theme-preference', theme);
+		document.documentElement.setAttribute('data-theme', theme);
+	};
+
 	$: {
 		if (svgElement?.getBoundingClientRect && mousePosition) {
 			const { left, top, width, height } = svgElement.getBoundingClientRect();
@@ -37,22 +48,11 @@
 		setTheme(theme);
 		await eyeOffset.set(50);
 	};
-
-	const getTheme = () => {
-		if (localStorage.getItem('theme-preference'))
-			return localStorage.getItem('theme-preference') === 'dark' ? 'dark' : 'light';
-		else return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-
-	const setTheme = (theme: string) => {
-		localStorage.setItem('theme-preference', theme);
-		document.documentElement.setAttribute('data-theme', theme);
-	};
 </script>
 
 <svelte:window on:mousemove={handleMouseMove} />
 
-<button on:click={handleClick}>
+<button on:click={handleClick} title="Activer ou désactiver le mode sombre">
 	<svg
 		viewBox="-50 -50 100 100"
 		version="1.1"

@@ -27,20 +27,46 @@
 	--space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
 	--space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
 
-	--text-raw: 0 0% 13%;
-	--text: hsl(var(--text-raw));
-	--surface-raw: 0 0% 99%;
-	--surface: hsl(var(--surface-raw));
+	--text-raw-light: 0 0% 13%;
+	--text-light: hsl(var(--text-raw));
+	--surface-raw-light: 0 0% 99%;
+	--surface-light: hsl(var(--surface-raw));
+
+	--surface-raw-dark: 0 0% 7%;
+	--surface-dark: hsl(var(--surface-raw));
+	--text-raw-dark: 0 0% 93%;
+	--text-dark: hsl(var(--text-raw));
 
 	--primary-raw: 234 100% 60%;
 	--primary: hsl(var(--primary-raw));
+
+	--text-raw: var(--text-raw-light);
+	--text: var(--text-light);
+	--surface-raw: var(--surface-raw-light);
+	--surface: var(--surface-light);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--surface-raw: var(--surface-raw-dark);
+		--surface: var(--surface-dark);
+		--text-raw: var(--text-raw-dark);
+		--text: var(--text-dark);
+	}
 }
 html[data-theme='dark'] {
-	--surface-raw: 0 0% 7%;
-	--surface: hsl(var(--surface-raw));
-	--text-raw: 0 0% 93%;
-	--text: hsl(var(--text-raw));
+	--surface-raw: var(--surface-raw-dark);
+	--surface: var(--surface-dark);
+	--text-raw: var(--text-raw-dark);
+	--text: var(--text-dark);
 }
+html[data-theme='light'] {
+	--surface-raw: var(--surface-raw-light);
+	--surface: var(--surface-light);
+	--text-raw: var(--text-raw-light);
+	--text: var(--text-light);
+}
+
 /* RESET */
 *,
 *::before,
