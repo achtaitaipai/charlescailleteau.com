@@ -29,6 +29,7 @@
 		min-height: 100vh;
 		padding-block-end: var(--space-xl);
 		display: flex;
+		animation: opening 1.5s 0.2s both;
 	}
 	.hero-container {
 		min-height: 100%;
@@ -75,6 +76,15 @@
 		}
 		.description {
 			padding-inline: var(--space-xs);
+		}
+	}
+
+	@keyframes opening {
+		from {
+			clip-path: rect(0% 100% 100% 100%);
+		}
+		to {
+			clip-path: rect(0% 100% 100% 0%);
 		}
 	}
 </style>
