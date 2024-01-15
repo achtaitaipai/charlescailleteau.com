@@ -25,7 +25,7 @@
 							target="_blank">L'oeil à l'écoute</a
 						> a arpenté la Seine-Saint-Senis pour permettre à ses habitants de réaliser des émissions
 						radiophoniques. L'association a cessé son activité en 2023. C'est à ce moment qu'elle m'a
-						contacté pour réaliser un site qui relate ses actions et donne accés ses émissions.
+						contacté pour réaliser un site qui relate ses actions et donne accés à ses émissions.
 					</p>
 				</ProjectCard>
 			</div>
@@ -122,6 +122,7 @@
 	@media (width>50rem) {
 		.project-item p {
 			text-align: justify;
+			hyphens: auto;
 			font-size: var(--step-3);
 			margin-inline: auto;
 			line-height: 1.2;
