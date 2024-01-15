@@ -18,16 +18,18 @@
 
 <style>
 	.images-wrapper {
-		height: 100%;
 		position: relative;
+		background: var(--surface);
 	}
 	picture {
 		width: 100%;
-		height: 100%;
+		height: auto;
+		aspect-ratio: 16/9;
+		background: var(--surface);
 	}
 	img {
-		width: 100%;
+		margin-inline: auto;
+		width: auto;
 		height: 100%;
-		object-fit: contain;
 	}
 </style>

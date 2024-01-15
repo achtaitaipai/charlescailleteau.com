@@ -111,8 +111,6 @@
 		}
 	}
 	.project-item {
-		background: linear-gradient(to right, var(--primary) 50%, var(--surface) 50%);
-		background: var(--surface);
 		top: 0;
 	}
 	.project-item p {

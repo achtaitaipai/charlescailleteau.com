@@ -13,19 +13,24 @@
 <style>
 	div {
 		display: flex;
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translate(-50%, 0);
-		background: var(--surface);
 		flex-direction: column;
-		gap: var(--space-3xs);
-		padding-block: var(--space-2xs);
-		border: 2px solid var(--primary);
-		border-bottom: none;
-		width: min(80%, 20rem);
 		justify-content: center;
 		align-items: center;
+		gap: var(--space-2xs);
+		width: min(80%, 20rem);
+		margin-inline: auto;
+		background: var(--surface);
+		margin-block: var(--space-3xs);
+		padding-block: var(--space-xs);
+	}
+	@media (width > 40rem) {
+		div {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+			border: 2px solid var(--primary);
+		}
 	}
 	label {
 		text-align: center;

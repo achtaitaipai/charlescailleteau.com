@@ -40,7 +40,7 @@
 			stroke="currentColor"
 			width="1em"
 			height="1em"
-			style="transform:rotate({descriptionIsOpen ? '45deg' : 0});"
+			style="transform:rotate({descriptionIsOpen ? '-135deg' : 0});"
 		>
 			<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
 		</svg>
@@ -50,16 +50,14 @@
 <style>
 	.project-wrapper {
 		position: relative;
-		width: 100%;
-		height: auto;
-		aspect-ratio: 16 / 9;
 	}
 	.iframe,
 	.images {
-		height: 100%;
+		width: 100%;
 	}
 	.iframe {
 		padding: var(--space-xs);
+		background: var(--surface);
 	}
 
 	@media (width > 60rem) {
@@ -90,15 +88,17 @@
 	}
 	.more {
 		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translate(-50%, 0);
+		right: 0;
+		bottom: 0;
 		background: var(--surface);
 		color: inherit;
 		border: 2px solid var(--primary);
-		border-top: none;
+		border-right: none;
+		border-bottom: none;
+		border-radius: 50% 0 0% 0%;
 		padding: var(--space-3xs);
 		cursor: pointer;
+		font-size: var(--step-1);
 	}
 	.more svg {
 		transition: transform 0.3s;
