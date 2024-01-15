@@ -20,9 +20,10 @@
 					]}
 				>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat sit iusto aliquid,
-						cupiditate, dolore incidunt eaque laudantium adipisci fuga veniam beatae blanditiis
-						minima odio maiores perspiciatis, quaerat deleniti eos distinctio!
+						Pendant plus de 15 ans l'association l'oeil à l'écoute a arpenté la Seine-saint-denis
+						pour permettre à ses habitants de réaliser des émissions radiophoniques. L'association a
+						cessé son activité en 2023. C'est à ce moment qu'ils m'ont contacté pour réaliser un
+						site qui relate leurs actions et donne accés aux émissions.
 					</p>
 				</ProjectCard>
 			</div>
@@ -39,9 +40,9 @@
 					]}
 				>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat sit iusto aliquid,
-						cupiditate, dolore incidunt eaque laudantium adipisci fuga veniam beatae blanditiis
-						minima odio maiores perspiciatis, quaerat deleniti eos distinctio!
+						Arplastoc a été réalisé pour une professeure d'arts plastiques. L'objectif était de
+						réaliser un site qui soit l'extension de sa salle de classe. Donnant accès aux séances
+						et aux travaux des élèves. C'est aussi un suport pouvant servir pendant les cours.
 					</p>
 				</ProjectCard>
 			</div>
@@ -58,9 +59,9 @@
 					]}
 				>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat sit iusto aliquid,
-						cupiditate, dolore incidunt eaque laudantium adipisci fuga veniam beatae blanditiis
-						minima odio maiores perspiciatis, quaerat deleniti eos distinctio!
+						Hadrien Tequi est artiste plasticien. Il m'a contacté pour que je réalise son portfolio.
+						Le site devait avoir une identité forte liée à son univers et laisser suffisament de
+						place à ses travaux pour s'exprimer.
 					</p>
 				</ProjectCard>
 			</div>
@@ -77,9 +78,10 @@
 					]}
 				>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat sit iusto aliquid,
-						cupiditate, dolore incidunt eaque laudantium adipisci fuga veniam beatae blanditiis
-						minima odio maiores perspiciatis, quaerat deleniti eos distinctio!
+						La société Mérimée est constituée d'universitaire spécialistes de l'auteur. Les membres
+						qui la composent étaient soucieux de permettre au plus grand nombre d'accéder à leurs
+						travaux. L'objectif était de réaliser un site facile à maintenir et utile autant aux
+						spécialistes de l'oeuvre de Mérimée qu'aux néophites.
 					</p>
 				</ProjectCard>
 			</div>
