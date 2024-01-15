@@ -10,7 +10,7 @@
 			<div class="project-item">
 				<ProjectCard
 					src="https://loeilalecoute.fr/"
-					title="L'oeil à l'écoute"
+					title="L'oœil à l'écoute"
 					images={[
 						'images/sites/loeilalecoute0',
 						'images/sites/loeilalecoute1',
@@ -20,10 +20,10 @@
 					]}
 				>
 					<p>
-						Pendant plus de 15 ans l'association l'oeil à l'écoute a arpenté la Seine-saint-denis
+						Pendant plus de 15 ans, l'association L'oeil à l'écoute a arpenté la Seine-Saint-Senis
 						pour permettre à ses habitants de réaliser des émissions radiophoniques. L'association a
-						cessé son activité en 2023. C'est à ce moment qu'ils m'ont contacté pour réaliser un
-						site qui relate leurs actions et donne accés aux émissions.
+						cessé son activité en 2023. C'est à ce moment qu'elle m'a contacté pour réaliser un site
+						qui relate ses actions et donne accés ses émissions.
 					</p>
 				</ProjectCard>
 			</div>
@@ -42,7 +42,7 @@
 					<p>
 						Arplastoc a été réalisé pour une professeure d'arts plastiques. L'objectif était de
 						réaliser un site qui soit l'extension de sa salle de classe. Donnant accès aux séances
-						et aux travaux des élèves. C'est aussi un suport pouvant servir pendant les cours.
+						et aux travaux des élèves, c'est aussi un support pouvant servir pendant les cours.
 					</p>
 				</ProjectCard>
 			</div>
@@ -60,8 +60,8 @@
 				>
 					<p>
 						Hadrien Tequi est artiste plasticien. Il m'a contacté pour que je réalise son portfolio.
-						Le site devait avoir une identité forte liée à son univers et laisser suffisament de
-						place à ses travaux pour s'exprimer.
+						Le site devait avoir une identité forte, liée à son univers, mais ne pas parasiter la
+						présentation des oeuvres.
 					</p>
 				</ProjectCard>
 			</div>
@@ -78,10 +78,10 @@
 					]}
 				>
 					<p>
-						La société Mérimée est constituée d'universitaire spécialistes de l'auteur. Les membres
-						qui la composent étaient soucieux de permettre au plus grand nombre d'accéder à leurs
-						travaux. L'objectif était de réaliser un site facile à maintenir et utile autant aux
-						spécialistes de l'oeuvre de Mérimée qu'aux néophites.
+						La société Mérimée est composée d'universitaire spécialistes de l'auteur, soucieux de
+						permettre au plus grand nombre d'accéder à leurs travaux. L'objectif était de réaliser
+						un site facile à maintenir et utile tant aux spécialistes de l'oeuvre de Mérimée qu'aux
+						néophytes.
 					</p>
 				</ProjectCard>
 			</div>
