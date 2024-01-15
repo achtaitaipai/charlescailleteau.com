@@ -64,7 +64,6 @@
 		padding-inline: var(--space-3xs);
 		padding-block: var(--space-s);
 		background: var(--surface);
-		margin-block-start: -2px;
 		position: relative;
 	}
 
@@ -76,7 +75,7 @@
 			font-size: var(--step-4);
 		}
 		header a {
-			font-size: var(--step-1);
+			font-size: var(--step-0);
 		}
 		.description {
 			padding-inline: var(--space-xs);

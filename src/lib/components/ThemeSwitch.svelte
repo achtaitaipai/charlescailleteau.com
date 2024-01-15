@@ -79,7 +79,7 @@
 		/>
 		<g
 			mask="url(#eye-mask)"
-			style="transform:translate({direction[0] * distanceFactor * 8}%,{direction[1] *
+			style="transform:translate({direction[0] * distanceFactor * 7}%,{direction[1] *
 				distanceFactor *
 				8}%)"
 			class="iris"
@@ -91,7 +91,7 @@
 				r="8"
 				stroke="none"
 				fill="currentColor"
-				style="transform:translate({direction[0] * distanceFactor * 8}%,{direction[1] *
+				style="transform:translate({direction[0] * distanceFactor * 7}%,{direction[1] *
 					distanceFactor *
 					8}%)"
 			/>

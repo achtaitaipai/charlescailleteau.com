@@ -98,8 +98,8 @@ a {
 	background-image: linear-gradient(
 		to top,
 		currentColor,
-		currentColor var(--line-weight, 1px),
-		transparent var(--line-weight, 1px)
+		currentColor var(--line-weight, 2px),
+		transparent var(--line-weight, 2px)
 	);
 	background-repeat: no-repeat;
 	background-size: 0%;

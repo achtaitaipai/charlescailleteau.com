@@ -43,9 +43,14 @@
 		height: auto;
 		aspect-ratio: 16 / 9;
 	}
+
 	.iframe-wrapper {
-		padding: var(--space-s);
 		height: 100%;
+	}
+	@media (min-width: 25rem) {
+		.iframe-wrapper {
+			padding: var(--space-s);
+		}
 	}
 	iframe {
 		width: calc(1% * var(--_width));
