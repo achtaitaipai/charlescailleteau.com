@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Iframe from './_Iframe.svelte';
 	import Images from './_Images.svelte';
-	import { slide } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { linear } from 'svelte/easing';
 	export let images: string[];
 	export let src: string;
@@ -21,11 +21,7 @@
 		<Images {images} />
 	</div>
 	{#if descriptionIsOpen}
-		<div
-			class="description"
-			transition:slide={{ duration: 300, easing: linear, axis: 'y' }}
-			id={descriptionId}
-		>
+		<div class="description" transition:fade={{ duration: 300, easing: linear }} id={descriptionId}>
 			<slot />
 		</div>
 	{/if}
@@ -87,8 +83,10 @@
 		position: absolute;
 		inset: 0;
 		display: flex;
-		align-items: center;
 		padding: var(--space-s);
+		padding-block-start: var(--space-l);
+		overflow: scroll;
+		min-height: 100%;
 	}
 	.more {
 		position: absolute;

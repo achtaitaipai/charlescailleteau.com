@@ -113,9 +113,15 @@
 		top: 0;
 	}
 	.project-item p {
-		font-size: var(--step-3);
-		margin-inline: auto;
-		text-align: justify;
-		line-height: 1.2;
+		margin-block: auto;
+	}
+
+	@media (width>50rem) {
+		.project-item p {
+			text-align: justify;
+			font-size: var(--step-3);
+			margin-inline: auto;
+			line-height: 1.2;
+		}
 	}
 </style>
