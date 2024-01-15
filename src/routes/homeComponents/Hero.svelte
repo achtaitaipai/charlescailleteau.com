@@ -8,7 +8,7 @@
 			<div>
 				<h1>Charles Cailleteau</h1>
 				<!-- <a href="mailto:charles.cailleteau@gmail.com">charles.cailleteau@gmail.com</a> -->
-				<a href="mailto:bjr@charlescailleteau.com">bjr@charlescailleteau.com</a>
+				<a href="mailto:slt@charlescailleteau.com">slt@charlescailleteau.com</a>
 			</div>
 			<ThemeSwitch />
 		</header>
