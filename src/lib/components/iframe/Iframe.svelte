@@ -43,13 +43,12 @@
 		height: auto;
 		aspect-ratio: 16 / 9;
 	}
-
 	.iframe-wrapper {
 		height: 100%;
 	}
-	@media (min-width: 25rem) {
+	@media (width > 30rem) {
 		.iframe-wrapper {
-			padding: var(--space-s);
+			padding: var(--space-xs);
 		}
 	}
 	iframe {
@@ -58,7 +57,6 @@
 		margin-inline: auto;
 		scroll-behavior: contain;
 	}
-
 	.description {
 		background: var(--surface);
 		position: absolute;
@@ -67,7 +65,6 @@
 		align-items: center;
 		padding: var(--space-s);
 	}
-
 	button {
 		position: absolute;
 		top: 0;

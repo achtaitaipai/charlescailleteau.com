@@ -14,7 +14,7 @@
 	div {
 		display: none;
 	}
-	@media (min-width: 50rem) {
+	@media (width > 50rem) {
 		div {
 			display: flex;
 		}
@@ -46,7 +46,6 @@
 		cursor: pointer;
 		width: 15rem;
 	}
-
 	input:focus {
 		outline: none;
 	}
@@ -55,14 +54,10 @@
 		height: 0.3rem;
 		border-radius: 0.15rem;
 	}
-
-	/* slider thumb */
 	input::-webkit-slider-thumb {
-		-webkit-appearance: none; /* Override default look */
+		-webkit-appearance: none;
 		appearance: none;
 		margin-top: -0.25rem;
-
-		/*custom styles*/
 		background-color: currentColor;
 		border: var(--text);
 		border-radius: 50%;
@@ -75,26 +70,18 @@
 		outline: solid currentColor;
 		outline-offset: 0.125rem;
 	}
-
-	/******** Firefox styles ********/
-	/* slider track */
 	input::-moz-range-track {
 		background-color: currentColor;
 		border-radius: 0.15rem;
 		height: 0.3rem;
 	}
-
-	/* slider thumb */
 	input::-moz-range-thumb {
-		border: none; /*Removes extra border that FF applies*/
-		border-radius: 0; /*Removes default border-radius that FF applies*/
-
-		/*custom styles*/
+		border: none;
+		border-radius: 0;
 		background-color: currentColor;
 		height: 0.8rem;
 		width: 0.8rem;
 	}
-
 	input[type='range']:focus::-moz-range-thumb {
 		border: 1px solid currentColor;
 		outline: solid currentColor;

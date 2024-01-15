@@ -29,7 +29,6 @@
 		padding-block-end: var(--space-xl);
 		display: flex;
 	}
-
 	.hero-container {
 		min-height: 100%;
 		display: flex;
@@ -44,16 +43,13 @@
 		background-color: var(--surface);
 		padding-inline: var(--space-3xs);
 	}
-
 	header h1 {
 		font-size: var(--step-4);
 		font-size: var(--step-3);
 	}
-
 	header a {
 		font-size: var(--step--1);
 	}
-
 	.description {
 		display: flex;
 		flex-direction: column;
@@ -66,8 +62,7 @@
 		background: var(--surface);
 		position: relative;
 	}
-
-	@media (min-width: 40rem) {
+	@media (width > 40rem) {
 		header {
 			padding-inline: var(--space-xs);
 		}

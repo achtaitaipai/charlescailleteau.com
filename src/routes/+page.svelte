@@ -51,7 +51,6 @@
 	main {
 		background: var(--primary);
 	}
-
 	.projects {
 		z-index: 1;
 		padding-block: var(--space-xl);
@@ -61,13 +60,11 @@
 		max-width: 80rem;
 		margin-inline: auto;
 	}
-
 	.project-item {
 		background: linear-gradient(to right, var(--primary) 50%, var(--surface) 50%);
 		background: var(--surface);
 		top: 0;
 	}
-
 	.project-item p {
 		font-size: var(--step-3);
 		margin-inline: auto;
