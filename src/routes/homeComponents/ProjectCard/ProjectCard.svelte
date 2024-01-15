@@ -1,26 +1,41 @@
 <script lang="ts">
+	import Iframe from './_Iframe.svelte';
+	import Images from './_Images.svelte';
 	import { slide } from 'svelte/transition';
 	import { linear } from 'svelte/easing';
-	import ResizeControl from './_ResizeControl.svelte';
+	export let images: string[];
 	export let src: string;
 	export let title: string;
+
+	const descriptionId = crypto.randomUUID();
+
 	let descriptionIsOpen = false;
-	let iframeWidth = 100;
 	let wrapperWidth: number;
-	$: minWidth = wrapperWidth > 0 ? Math.ceil((320 / wrapperWidth) * 100) : 50;
 </script>
 
 <div class="project-wrapper" bind:offsetWidth={wrapperWidth}>
-	<div class="iframe-wrapper">
-		<iframe {src} {title} frameborder="0" style="--_width:{iframeWidth}"></iframe>
+	<div class="iframe">
+		<Iframe {src} {title} {wrapperWidth} />
 	</div>
-	<ResizeControl min={minWidth} max={100} bind:value={iframeWidth} />
+	<div class="images">
+		<Images {images} />
+	</div>
 	{#if descriptionIsOpen}
-		<div class="description" transition:slide={{ duration: 300, easing: linear, axis: 'y' }}>
+		<div
+			class="description"
+			transition:slide={{ duration: 300, easing: linear, axis: 'y' }}
+			id={descriptionId}
+		>
 			<slot />
 		</div>
 	{/if}
-	<button on:click={() => (descriptionIsOpen = !descriptionIsOpen)}>
+	<button
+		on:click={() => (descriptionIsOpen = !descriptionIsOpen)}
+		class="more"
+		aria-controls={descriptionId}
+		aria-expanded={descriptionIsOpen}
+		aria-label="afficher la description"
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
@@ -43,19 +58,29 @@
 		height: auto;
 		aspect-ratio: 16 / 9;
 	}
-	.iframe-wrapper {
+	.iframe,
+	.images {
 		height: 100%;
 	}
-	@media (width > 30rem) {
-		.iframe-wrapper {
-			padding: var(--space-xs);
+	.iframe {
+		padding: var(--space-xs);
+	}
+
+	@media (width > 60rem) {
+		.iframe {
+			display: block;
+		}
+		.images {
+			display: none;
 		}
 	}
-	iframe {
-		width: calc(1% * var(--_width));
-		height: 100%;
-		margin-inline: auto;
-		scroll-behavior: contain;
+	@media (width <= 60rem) {
+		.iframe {
+			display: none;
+		}
+		.images {
+			display: block;
+		}
 	}
 	.description {
 		background: var(--surface);
@@ -65,7 +90,7 @@
 		align-items: center;
 		padding: var(--space-s);
 	}
-	button {
+	.more {
 		position: absolute;
 		top: 0;
 		left: 50%;
@@ -77,7 +102,7 @@
 		padding: var(--space-3xs);
 		cursor: pointer;
 	}
-	button svg {
+	.more svg {
 		transition: transform 0.3s;
 	}
 </style>

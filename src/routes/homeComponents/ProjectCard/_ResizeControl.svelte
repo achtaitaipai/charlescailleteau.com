@@ -12,25 +12,18 @@
 
 <style>
 	div {
-		display: none;
-	}
-	@media (width > 50rem) {
-		div {
-			display: flex;
-		}
-	}
-	div {
+		display: flex;
 		position: absolute;
 		bottom: 0;
 		left: 50%;
 		transform: translate(-50%, 0);
 		background: var(--surface);
 		flex-direction: column;
-		gap: var(--space-xs);
-		padding-block: var(--space-s);
+		gap: var(--space-3xs);
+		padding-block: var(--space-2xs);
 		border: 2px solid var(--primary);
 		border-bottom: none;
-		width: 20rem;
+		width: min(80%, 20rem);
 		justify-content: center;
 		align-items: center;
 	}
@@ -44,7 +37,7 @@
 		appearance: none;
 		background: transparent;
 		cursor: pointer;
-		width: 15rem;
+		width: min(15rem, 90%);
 	}
 	input:focus {
 		outline: none;
