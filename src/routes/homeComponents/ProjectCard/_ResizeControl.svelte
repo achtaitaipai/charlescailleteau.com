@@ -43,7 +43,7 @@
 		background: transparent;
 		cursor: pointer;
 		width: min(15rem, 90%);
-		/* touch-action: manipulation; */
+		touch-action: manipulation;
 		-webkit-tap-highlight-color: transparent;
 	}
 	input:focus {
@@ -52,7 +52,7 @@
 	input::-webkit-slider-runnable-track {
 		background-color: currentColor;
 		height: 0.5rem;
-		border-radius: 0.15rem;
+		border-radius: 9999;
 	}
 	input::-webkit-slider-thumb {
 		-webkit-appearance: none;
@@ -72,7 +72,7 @@
 	}
 	input::-moz-range-track {
 		background-color: currentColor;
-		border-radius: 0.15rem;
+		border-radius: 9999;
 		height: 0.5rem;
 	}
 	input::-moz-range-thumb {
