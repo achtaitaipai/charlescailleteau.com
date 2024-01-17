@@ -7,87 +7,78 @@
 	<Hero />
 	<div class=" projects">
 		<div class="projects-wrapper wrapper flow" style="--flow-space:var(--space-l);">
-			<div class="project-item">
-				<ProjectCard
-					src="https://loeilalecoute.fr/"
-					title="L'oœil à l'écoute"
-					images={[
-						'images/sites/loeilalecoute0',
-						'images/sites/loeilalecoute1',
-						'images/sites/loeilalecoute2',
-						'images/sites/loeilalecoute3',
-						'images/sites/loeilalecoute4'
-					]}
-				>
-					<p class="projectDescription">
-						Pendant plus de 15 ans, l'association <a
-							href="https://loeilalecoute.fr/"
-							target="_blank">L'oeil à l'écoute</a
-						> a arpenté la Seine-Saint-Senis pour permettre à ses habitants de réaliser des émissions
-						radiophoniques. L'association a cessé son activité en 2023. C'est à ce moment qu'elle m'a
-						contacté pour réaliser un site qui relate ses actions et donne accés à ses émissions.
-					</p>
-				</ProjectCard>
-			</div>
-			<div class="project-item">
-				<ProjectCard
-					src="https://arplastoc.com/"
-					title="Arplastoc"
-					images={[
-						'images/sites/arplastoc0',
-						'images/sites/arplastoc1',
-						'images/sites/arplastoc2',
-						'images/sites/arplastoc3',
-						'images/sites/arplastoc4'
-					]}
-				>
-					<p class="projectDescription">
-						<a href="https://arplastoc.com/" target="_blank">Arplastoc</a> a été conçu pour une professeure
-						d'arts plastiques. L'objectif était de réaliser un site qui soit l'extension de sa salle
-						de classe. Donnant accès aux séances et aux travaux des élèves, c'est aussi un support pouvant
-						servir pendant les cours.
-					</p>
-				</ProjectCard>
-			</div>
-			<div class="project-item">
-				<ProjectCard
-					src="https://hadrientequi.net/"
-					title="Hadrien Tequi"
-					images={[
-						'images/sites/hadrientequi0',
-						'images/sites/hadrientequi1',
-						'images/sites/hadrientequi2',
-						'images/sites/hadrientequi3',
-						'images/sites/hadrientequi4'
-					]}
-				>
-					<p class="projectDescription">
-						<a href="https://hadrientequi.net/" target="_blank">Hadrien Tequi</a> est artiste plasticien.
-						Il m'a contacté pour que je concoive et développe son portfolio. Le site devait avoir une
-						identité forte, liée à son univers, sans parasiter la présentation des oeuvres.
-					</p>
-				</ProjectCard>
-			</div>
-			<div class="project-item">
-				<ProjectCard
-					src="https://prosper-merimee.com/"
-					title="Société mérimée"
-					images={[
-						'images/sites/prosper-merimee0',
-						'images/sites/prosper-merimee1',
-						'images/sites/prosper-merimee2',
-						'images/sites/prosper-merimee3',
-						'images/sites/prosper-merimee4'
-					]}
-				>
-					<p class="projectDescription">
-						<a href="https://prosper-merimee.com/" target="_blank">La société Mérimée</a> est composée
-						d'universitaires spécialistes de l'auteur, soucieux de permettre au plus grand nombre d'accéder
-						à leurs travaux. L'objectif était de réaliser un site facile à maintenir et utile tant aux
-						érudits qu'aux néophytes.
-					</p>
-				</ProjectCard>
-			</div>
+			<ProjectCard
+				src="https://loeilalecoute.fr/"
+				title="L'oœil à l'écoute"
+				images={[
+					'images/sites/loeilalecoute0',
+					'images/sites/loeilalecoute1',
+					'images/sites/loeilalecoute2',
+					'images/sites/loeilalecoute3',
+					'images/sites/loeilalecoute4'
+				]}
+			>
+				<p class="projectDescription">
+					Pendant plus de 15 ans, l'association <a href="https://loeilalecoute.fr/" target="_blank"
+						>L'oeil à l'écoute</a
+					> a arpenté la Seine-Saint-Senis pour permettre à ses habitants de réaliser des émissions radiophoniques.
+					L'association a cessé son activité en 2023. C'est à ce moment qu'elle m'a contacté pour réaliser
+					un site qui relate ses actions et donne accés à ses émissions.
+				</p>
+			</ProjectCard>
+			<ProjectCard
+				src="https://arplastoc.com/"
+				title="Arplastoc"
+				images={[
+					'images/sites/arplastoc0',
+					'images/sites/arplastoc1',
+					'images/sites/arplastoc2',
+					'images/sites/arplastoc3',
+					'images/sites/arplastoc4'
+				]}
+			>
+				<p class="projectDescription">
+					<a href="https://arplastoc.com/" target="_blank">Arplastoc</a> a été conçu pour une professeure
+					d'arts plastiques. L'objectif était de réaliser un site qui soit l'extension de sa salle de
+					classe. Donnant accès aux séances et aux travaux des élèves, c'est aussi un support pouvant
+					servir pendant les cours.
+				</p>
+			</ProjectCard>
+			<ProjectCard
+				src="https://hadrientequi.net/"
+				title="Hadrien Tequi"
+				images={[
+					'images/sites/hadrientequi0',
+					'images/sites/hadrientequi1',
+					'images/sites/hadrientequi2',
+					'images/sites/hadrientequi3',
+					'images/sites/hadrientequi4'
+				]}
+			>
+				<p class="projectDescription">
+					<a href="https://hadrientequi.net/" target="_blank">Hadrien Tequi</a> est artiste plasticien.
+					Il m'a contacté pour que je concoive et développe son portfolio. Le site devait avoir une identité
+					forte, liée à son univers, sans parasiter la présentation des oeuvres.
+				</p>
+			</ProjectCard>
+			<ProjectCard
+				src="https://prosper-merimee.com/"
+				title="Société mérimée"
+				images={[
+					'images/sites/prosper-merimee0',
+					'images/sites/prosper-merimee1',
+					'images/sites/prosper-merimee2',
+					'images/sites/prosper-merimee3',
+					'images/sites/prosper-merimee4'
+				]}
+			>
+				<p class="projectDescription">
+					<a href="https://prosper-merimee.com/" target="_blank">La société Mérimée</a> est composée
+					d'universitaires spécialistes de l'auteur, soucieux de permettre au plus grand nombre d'accéder
+					à leurs travaux. L'objectif était de réaliser un site facile à maintenir et utile tant aux
+					érudits qu'aux néophytes.
+				</p>
+			</ProjectCard>
 		</div>
 	</div>
 </main>
