@@ -19,7 +19,7 @@
 						'images/sites/loeilalecoute4'
 					]}
 				>
-					<p>
+					<p class="projectDescription">
 						Pendant plus de 15 ans, l'association <a
 							href="https://loeilalecoute.fr/"
 							target="_blank">L'oeil à l'écoute</a
@@ -41,7 +41,7 @@
 						'images/sites/arplastoc4'
 					]}
 				>
-					<p>
+					<p class="projectDescription">
 						<a href="https://arplastoc.com/" target="_blank">Arplastoc</a> a été conçu pour une professeure
 						d'arts plastiques. L'objectif était de réaliser un site qui soit l'extension de sa salle
 						de classe. Donnant accès aux séances et aux travaux des élèves, c'est aussi un support pouvant
@@ -61,7 +61,7 @@
 						'images/sites/hadrientequi4'
 					]}
 				>
-					<p>
+					<p class="projectDescription">
 						<a href="https://hadrientequi.net/" target="_blank">Hadrien Tequi</a> est artiste plasticien.
 						Il m'a contacté pour que je concoive et développe son portfolio. Le site devait avoir une
 						identité forte, liée à son univers, sans parasiter la présentation des oeuvres.
@@ -80,7 +80,7 @@
 						'images/sites/prosper-merimee4'
 					]}
 				>
-					<p>
+					<p class="projectDescription">
 						<a href="https://prosper-merimee.com/" target="_blank">La société Mérimée</a> est composée
 						d'universitaires spécialistes de l'auteur, soucieux de permettre au plus grand nombre d'accéder
 						à leurs travaux. L'objectif était de réaliser un site facile à maintenir et utile tant aux
@@ -110,15 +110,12 @@
 			padding-inline: var(--space-s);
 		}
 	}
-	.project-item {
-		top: 0;
-	}
-	.project-item p {
+	.projectDescription {
 		margin-block: auto;
 	}
 
 	@media (width>70rem) {
-		.project-item p {
+		.projectDescription {
 			font-size: var(--step-3);
 			margin-inline: auto;
 			line-height: 1.2;
