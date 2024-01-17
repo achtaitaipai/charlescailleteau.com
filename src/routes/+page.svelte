@@ -6,7 +6,7 @@
 <main>
 	<Hero />
 	<div class=" projects">
-		<div class="projects-wrapper flow" style="--flow-space:var(--space-l);">
+		<div class="projects-wrapper wrapper flow" style="--flow-space:var(--space-l);">
 			<div class="project-item">
 				<ProjectCard
 					src="https://loeilalecoute.fr/"
@@ -117,7 +117,7 @@
 		margin-block: auto;
 	}
 
-	@media (width>50rem) {
+	@media (width>70rem) {
 		.project-item p {
 			text-align: justify;
 			hyphens: auto;
