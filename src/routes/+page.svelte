@@ -82,7 +82,7 @@
 				>
 					<p>
 						<a href="https://prosper-merimee.com/" target="_blank">La société Mérimée</a> est composée
-						d'universitaire spécialistes de l'auteur, soucieux de permettre au plus grand nombre d'accéder
+						d'universitaires spécialistes de l'auteur, soucieux de permettre au plus grand nombre d'accéder
 						à leurs travaux. L'objectif était de réaliser un site facile à maintenir et utile tant aux
 						érudits qu'aux néophytes.
 					</p>
