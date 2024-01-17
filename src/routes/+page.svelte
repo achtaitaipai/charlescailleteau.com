@@ -119,8 +119,6 @@
 
 	@media (width>70rem) {
 		.project-item p {
-			text-align: justify;
-			hyphens: auto;
 			font-size: var(--step-3);
 			margin-inline: auto;
 			line-height: 1.2;
