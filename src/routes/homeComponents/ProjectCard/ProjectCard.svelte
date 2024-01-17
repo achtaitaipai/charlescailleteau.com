@@ -90,15 +90,16 @@
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		background: var(--surface);
-		color: inherit;
-		border: 2px solid var(--primary);
+		background: var(--primary);
+		color: var(--surface);
+		border: none;
+		/* border: 3px solid var(--surface); */
 		border-right: none;
 		border-bottom: none;
 		border-radius: 50% 0 0% 0%;
 		padding: var(--space-3xs);
 		cursor: pointer;
-		font-size: var(--step-1);
+		font-size: var(--step-2);
 	}
 	.more svg {
 		transition: transform 0.3s;
