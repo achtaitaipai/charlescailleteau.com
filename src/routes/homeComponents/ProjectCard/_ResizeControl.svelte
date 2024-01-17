@@ -52,7 +52,7 @@
 	input::-webkit-slider-runnable-track {
 		background-color: currentColor;
 		height: 0.5rem;
-		border-radius: 9999;
+		border-radius: 0.25rem;
 	}
 	input::-webkit-slider-thumb {
 		-webkit-appearance: none;
@@ -72,12 +72,12 @@
 	}
 	input::-moz-range-track {
 		background-color: currentColor;
-		border-radius: 9999;
+		border-radius: 0.25rem;
 		height: 0.5rem;
 	}
 	input::-moz-range-thumb {
 		border: none;
-		border-radius: 0;
+		border-radius: 50%;
 		background-color: currentColor;
 		height: 1.2rem;
 		width: 1.2rem;
