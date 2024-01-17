@@ -42,7 +42,7 @@
 					]}
 				>
 					<p>
-						<a href="https://arplastoc.com/" target="_blank">Arplastoc</a> a été réalisé pour une professeure
+						<a href="https://arplastoc.com/" target="_blank">Arplastoc</a> a été conçu pour une professeure
 						d'arts plastiques. L'objectif était de réaliser un site qui soit l'extension de sa salle
 						de classe. Donnant accès aux séances et aux travaux des élèves, c'est aussi un support pouvant
 						servir pendant les cours.
@@ -63,8 +63,8 @@
 				>
 					<p>
 						<a href="https://hadrientequi.net/" target="_blank">Hadrien Tequi</a> est artiste plasticien.
-						Il m'a contacté pour que je réalise son portfolio. Le site devait avoir une identité forte,
-						liée à son univers, mais ne pas parasiter la présentation des oeuvres.
+						Il m'a contacté pour que je concoive et développe son portfolio. Le site devait avoir une
+						identité forte, liée à son univers, sans parasiter la présentation des oeuvres.
 					</p>
 				</ProjectCard>
 			</div>
@@ -84,7 +84,7 @@
 						<a href="https://prosper-merimee.com/" target="_blank">La société Mérimée</a> est composée
 						d'universitaire spécialistes de l'auteur, soucieux de permettre au plus grand nombre d'accéder
 						à leurs travaux. L'objectif était de réaliser un site facile à maintenir et utile tant aux
-						spécialistes de l'oeuvre de Mérimée qu'aux néophytes.
+						érudits qu'aux néophytes.
 					</p>
 				</ProjectCard>
 			</div>
