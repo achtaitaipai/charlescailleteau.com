@@ -6,7 +6,7 @@
 <main>
 	<Hero />
 	<div class=" projects">
-		<div class="projects-wrapper wrapper flow" style="--flow-space:var(--space-l);">
+		<div class="projects-wrapper wrapper flow" style="--flow-space:var(--space-xl);">
 			<ProjectCard
 				src="https://loeilalecoute.fr/"
 				title="L'oœil à l'écoute"
