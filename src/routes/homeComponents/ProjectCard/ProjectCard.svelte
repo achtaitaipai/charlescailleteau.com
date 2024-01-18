@@ -112,7 +112,7 @@
 		inset: 0;
 		display: flex;
 		padding: var(--space-s);
-		padding-block-start: var(--space-l);
+		padding-block: var(--space-m);
 		overflow-y: auto;
 		min-height: 100%;
 	}
