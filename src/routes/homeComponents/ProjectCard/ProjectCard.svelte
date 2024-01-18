@@ -75,17 +75,18 @@
 	.project-wrapper {
 		position: relative;
 	}
+
 	.project-wrapper[data-visible='false'] > * {
-		clip-path: rect(100% 100% 100% 0);
+		clip-path: rect(0 0 0 0);
+	}
+	.project-wrapper[data-visible='false']:nth-child(2n) > * {
+		clip-path: rect(0 100% 0 100%);
 	}
 	.project-wrapper[data-visible='true'] > * {
 		clip-path: rect(0 100% 100% 0);
-		transition: clip-path 0.45s;
+		transition: clip-path 0.45s ease-out;
 	}
-	.iframe,
-	.images {
-		width: 100%;
-	}
+
 	.iframe {
 		padding: var(--space-xs);
 		background: var(--surface);
