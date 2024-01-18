@@ -38,10 +38,10 @@
 	bind:this={wrapperEl}
 	data-visible={onScreen}
 >
-	<div class="iframe">
+	<div class="project-viewer desktop">
 		<Iframe {src} {title} {wrapperWidth} />
 	</div>
-	<div class="images">
+	<div class="project-viewer mobile">
 		<Images {images} />
 	</div>
 	{#if descriptionIsOpen}
@@ -87,27 +87,25 @@
 		transition: clip-path 0.45s ease-out;
 	}
 
-	.iframe {
+	.desktop {
 		padding: var(--space-xs);
 		background: var(--surface);
+		display: none;
+	}
+
+	.mobile {
+		display: block;
 	}
 
 	@media (width > 60rem) {
-		.iframe {
+		.desktop {
 			display: block;
 		}
-		.images {
+		.mobile {
 			display: none;
 		}
 	}
-	@media (width <= 60rem) {
-		.iframe {
-			display: none;
-		}
-		.images {
-			display: block;
-		}
-	}
+
 	.description {
 		background: var(--surface);
 		position: absolute;
@@ -120,12 +118,12 @@
 	}
 	.more {
 		position: absolute;
-		right: 0;
-		bottom: 0;
+		/* no buggy border */
+		right: -1px;
+		bottom: -1px;
 		background: var(--primary);
 		color: var(--surface);
 		border: none;
-		/* border: 3px solid var(--surface); */
 		border-right: none;
 		border-bottom: none;
 		border-radius: 50% 0 0% 0%;
