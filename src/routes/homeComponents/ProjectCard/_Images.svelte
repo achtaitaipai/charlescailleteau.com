@@ -20,12 +20,13 @@
 	.images-wrapper {
 		position: relative;
 		background: var(--surface);
+		border: 2px solid var(--surface);
 	}
 	picture {
 		width: 100%;
-		height: auto;
 		aspect-ratio: 16/9;
-		background: var(--primary);
+		height: auto;
+		background: var(--surface);
 	}
 	img {
 		margin-inline: auto;
