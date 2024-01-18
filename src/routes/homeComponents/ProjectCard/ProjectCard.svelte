@@ -113,7 +113,7 @@
 		display: flex;
 		padding: var(--space-s);
 		padding-block-start: var(--space-l);
-		overflow: scroll;
+		overflow-y: auto;
 		min-height: 100%;
 	}
 	.more {
