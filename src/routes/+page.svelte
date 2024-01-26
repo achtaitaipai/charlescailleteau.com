@@ -57,7 +57,7 @@
 			>
 				<p class="projectDescription">
 					<a href="https://hadrientequi.net/" target="_blank">Hadrien Tequi</a> est artiste plasticien.
-					Il m'a contacté pour que je concoive et développe son portfolio. Le site devait avoir une identité
+					Il m'a contacté pour que je conçoive et développe son portfolio. Le site devait avoir une identité
 					forte, liée à son univers, sans parasiter la présentation des oeuvres.
 				</p>
 			</ProjectCard>
