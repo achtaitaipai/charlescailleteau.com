@@ -8,6 +8,24 @@
 	<div class=" projects">
 		<div class="projects-wrapper wrapper flow" style="--flow-space:var(--space-xl);">
 			<ProjectCard
+				src="https://raphaellekerbrat.com/fr/"
+				title="Raphaëlle Kerbrat"
+				images={[
+					'images/sites/raphaellekerbrat0',
+					'images/sites/raphaellekerbrat1',
+					'images/sites/raphaellekerbrat2',
+					'images/sites/raphaellekerbrat3',
+					'images/sites/raphaellekerbrat4'
+				]}
+			>
+				<p class="projectDescription">
+					<a href="https://raphaellekerbrat.com/" target="_blank">Raphaëlle Kerbrat</a> est artiste plasticienne,
+					nous avons designé son site en collaboration. L'objectif était de rendre le site lisible et
+					simple d'utilisation, tout en intégrant des éléments interactifs et des animations en lien
+					avec son travail plastique.
+				</p>
+			</ProjectCard>
+			<ProjectCard
 				src="https://loeilalecoute.fr/"
 				title="L'oœil à l'écoute"
 				images={[
