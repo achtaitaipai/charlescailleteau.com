@@ -34,7 +34,7 @@
 
 	--text-dark: #ededed;
 	--surface-dark: #121212;
-	--primary-dark: #3347ff;
+	--primary-dark: #208eff;
 
 	--text: var(--text-light);
 	--surface: var(--surface-light);
@@ -47,13 +47,13 @@
 	:root {
 		--surface: var(--surface-dark);
 		--text: var(--text-dark);
-		--primary: var(var(--primary-dark));
+		--primary: var(--primary-dark);
 	}
 }
 html[data-theme='dark'] {
 	--surface: var(--surface-dark);
 	--text: var(--text-dark);
-	--primary: var(var(--primary-dark));
+	--primary: var(--primary-dark);
 }
 html[data-theme='light'] {
 	--surface: var(--surface-light);
