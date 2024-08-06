@@ -47,7 +47,8 @@ for await (const filePath of files) {
   for (let index = 0; index < formats.length; index++) {
     await page.setViewport(formats[index]);
     await page.screenshot({
-      path: `src/content/assets/screenshots/${slugify(title)}${index}.png`,
+      path: `src/content/assets/screenshots/${slugify(title)}${index}.webp`,
+      type: "webp",
     });
   }
 }
