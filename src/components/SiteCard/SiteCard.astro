@@ -15,37 +15,39 @@ const descriptionId = nanoid();
 ---
 
 <c-site-card>
-  <div class="desktop">
-    <Desktop title={site.data.title} src={site.data.url} />
-  </div>
-  <div class="mobile">
-    <Mobile title={site.data.title} />
-  </div>
-  <div class="mobile"></div>
-  <div class="description" id={descriptionId} style="display: none;">
-    <Content />
-  </div>
-  <button
-    class="more"
-    aria-controls={descriptionId}
-    aria-expanded="false"
-    aria-label="afficher la description"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      width="1em"
-      height="1em"
+  <div class="container">
+    <div class="desktop">
+      <Desktop title={site.data.title} src={site.data.url} />
+    </div>
+    <div class="mobile">
+      <Mobile title={site.data.title} />
+    </div>
+    <div class="mobile"></div>
+    <div class="description" id={descriptionId} style="display: none;">
+      <Content />
+    </div>
+    <button
+      class="more"
+      aria-controls={descriptionId}
+      aria-expanded="false"
+      aria-label="afficher la description"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M12 4.5v15m7.5-7.5h-15"></path>
-    </svg>
-  </button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        width="1em"
+        height="1em"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"></path>
+      </svg>
+    </button>
+  </div>
 </c-site-card>
 
 <script>
@@ -54,6 +56,7 @@ const descriptionId = nanoid();
     "c-site-card",
     class SiteCard extends HTMLElement {
       #stopViewportDetection?: () => void;
+      #container: HTMLElement;
       #moreBtn: HTMLButtonElement;
       #moreIcon: SVGElement;
       #description: HTMLElement;
@@ -61,6 +64,7 @@ const descriptionId = nanoid();
 
       constructor() {
         super();
+        this.#container = this.querySelector(".container")!;
         this.#moreBtn = this.querySelector("button.more")!;
         this.#moreIcon = this.#moreBtn.querySelector("svg")!;
         this.#description = this.querySelector(".description")!;
@@ -68,7 +72,11 @@ const descriptionId = nanoid();
 
       connectedCallback() {
         this.#stopViewportDetection = inView(this, () => {
-          animate(this, { opacity: [0, 1], y: [200, 0] }, { duration: 0.5 });
+          animate(
+            this.#container,
+            { opacity: [0, 1], y: [200, 0] },
+            { delay: 0.15, duration: 0.4 }
+          );
         });
         this.#moreBtn.addEventListener("click", this.#handleClick);
       }
@@ -107,14 +115,19 @@ const descriptionId = nanoid();
 
 <style>
   c-site-card {
+    overflow: hidden;
     display: block;
+  }
+  .container {
     position: relative;
     overflow: hidden;
+    width: 100%;
   }
   .desktop {
     display: none;
     padding: var(--space-xs);
     background: var(--surface);
+    width: 100%;
   }
 
   @media (width > 60rem) {
