@@ -16,10 +16,7 @@ const sites = (await getCollection("sites")).sort(
       <slot />
     </HeroSection>
     <div class="projects">
-      <div
-        class="projects-wrapper wrapper flow"
-        style="--flow-space:var(--space-xl);"
-      >
+      <div class="projects-wrapper flow" style="--flow-space:var(--space-xl);">
         {sites.map((el) => <SiteCard slug={el.slug} />)}
       </div>
     </div>
@@ -38,9 +35,9 @@ const sites = (await getCollection("sites")).sort(
     padding-block: var(--space-xl);
   }
   .projects-wrapper {
-    padding-inline: var(--space-3xs);
-    max-width: 80rem;
+    width: var(--main-size);
     margin-inline: auto;
+    padding-inline: var(--space-3xs);
   }
   @media (width > 25rem) {
     .projects-wrapper {

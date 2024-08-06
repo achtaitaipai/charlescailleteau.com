@@ -37,8 +37,8 @@
   --text: var(--text-light);
   --surface: var(--surface-light);
   --primary: var(--primary-light);
-  /*
-	` */
+
+  --main-size: clamp(20rem, 80vw, 70rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -128,11 +128,6 @@ a {
 }
 
 /* UTILS */
-.wrapper {
-  width: clamp(20rem, 80vw, 70rem);
-  padding-inline: var(--space-3xs);
-  margin-inline: auto;
-}
 
 .flow > * + * {
   margin-block-start: var(--flow-space, 1em);
