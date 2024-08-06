@@ -129,18 +129,22 @@ const descriptionId = nanoid();
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center;
-    padding: var(--space-s);
-    padding-block: var(--space-m);
+    padding: var(--space-xs);
     overflow-y: auto;
     min-height: 100%;
     background: var(--surface);
     transform-origin: top;
     @media (width>60rem) {
+      padding-block: var(--space-m);
+      padding-inline: var(--space-s);
       font-size: var(--step-3);
       line-height: 1.15;
     }
   }
+  .description > :global(*) {
+    margin-block: auto;
+  }
+
   .more {
     position: absolute;
     /* no buggy border */
