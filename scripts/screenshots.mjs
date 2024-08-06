@@ -4,11 +4,11 @@ import { glob } from "glob";
 import matter from "gray-matter";
 
 const formats = [
-  { width: 357, height: 700 },
-  { width: 425, height: 700 },
-  { width: 768, height: 700 },
-  { width: 1024, height: 700 },
-  { width: 1260, height: 700 },
+  { width: 357, height: 709 },
+  { width: 425, height: 709 },
+  { width: 768, height: 709 },
+  { width: 1024, height: 709 },
+  { width: 1260, height: 709 },
 ];
 
 const slugify = (str) => {
