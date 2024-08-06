@@ -14,7 +14,7 @@ const loadImage = (n: number) => {
   const imagePath = `/src/content/assets/screenshots/${slugify(title)}${n}.png`;
 
   const images = import.meta.glob<{ default: ImageMetadata }>(
-    "src/content/assets/**/*.{jpeg,jpg,png,gif}"
+    "/src/content/assets/screenshots/*.{jpeg,jpg,png,gif}"
   );
   if (!images[imagePath])
     throw new Error(
