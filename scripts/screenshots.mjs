@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, mkdir } from "node:fs/promises";
 import puppeteer from "puppeteer";
 import { glob } from "glob";
 import matter from "gray-matter";
@@ -27,6 +27,7 @@ const slugify = (str) => {
 
 const files = await glob("src/content/sites/*.md");
 
+await mkdir("src/content/assets/screenshots");
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 for await (const filePath of files) {

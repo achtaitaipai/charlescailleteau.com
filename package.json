@@ -8,7 +8,7 @@
     "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
-    "screenshots": "node scripts/screenshots.mjs",
+    "screenshots": "rm -rf src/content/assets/screenshots && node scripts/screenshots.mjs",
     "astro": "astro"
   },
   "dependencies": {
