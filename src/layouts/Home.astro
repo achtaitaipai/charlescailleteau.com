@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import HeroSection from "src/components/HeroSection.astro";
+import SiteCard from "src/components/SiteCard/SiteCard.astro";
+import BaseLayout from "src/layouts/Base.astro";
+const { frontmatter } = Astro.props;
+
+const sites = (await getCollection("sites")).sort(
+  (a, b) => b.data.priority - a.data.priority
+);
+---
+
+<BaseLayout>
+  <main>
+    <HeroSection title={frontmatter.title} mail={frontmatter.mail}>
+      <slot />
+    </HeroSection>
+    <div class="projects">
+      <div
+        class="projects-wrapper wrapper flow"
+        style="--flow-space:var(--space-xl);"
+      >
+        {sites.map((el) => <SiteCard slug={el.slug} />)}
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    background-color: var(--primary);
+  }
+  main {
+    background: var(--primary);
+  }
+  .projects {
+    z-index: 1;
+    padding-block: var(--space-xl);
+  }
+  .projects-wrapper {
+    padding-inline: var(--space-3xs);
+    max-width: 80rem;
+    margin-inline: auto;
+  }
+  @media (width > 25rem) {
+    .projects-wrapper {
+      padding-inline: var(--space-s);
+    }
+  }
+  .projectDescription {
+    margin-block: auto;
+  }
+
+  @media (width>70rem) {
+    .projectDescription {
+      font-size: var(--step-3);
+      margin-inline: auto;
+      line-height: 1.2;
+    }
+  }
+</style>

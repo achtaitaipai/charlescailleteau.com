@@ -1,18 +1,19 @@
-const postcssPresetEnv = require('postcss-preset-env');
-const autoPrefixer = require('autoprefixer');
+const postcssPresetEnv = require("postcss-preset-env");
+const autoPrefixer = require("autoprefixer");
+const cssNano = require("cssnano");
 
 const config = {
-	plugins: [
-		// postcssPresetEnv({
-		// 	stage: 3,
-		// 	features: {
-		// 		'nesting-rules': true,
-		// 		'custom-media-queries': true,
-		// 		'media-query-ranges': true
-		// 	}
-		// }),
-		// autoPrefixer()
-	]
+  plugins: [
+    postcssPresetEnv({
+      stage: 3,
+      features: {
+        "nesting-rules": true,
+        "media-query-ranges": true,
+      },
+    }),
+    autoPrefixer(),
+    cssNano(),
+  ],
 };
 
 module.exports = config;

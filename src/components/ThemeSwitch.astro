@@ -1,0 +1,173 @@
+<c-themeswitch>
+  <button>
+    <svg
+      viewBox="-50 -50 100 100"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+    >
+      <mask id="eye-mask">
+        <rect x="0" y="0" width="100" height="100" fill="black"></rect>
+        <path
+          d="M-45 0 Q 0 -50, 45 0 Q 0 50, -45 0 Z"
+          stroke="none"
+          fill="white"
+          stroke-linejoin="round"></path>
+      </mask>
+      <path
+        d="M-45 0 Q 0 -50, 45 0 Q 0 50, -45 0 Z"
+        stroke="currentColor"
+        stroke-width="5"
+        fill="none"
+        stroke-linejoin="round"></path>
+      <g
+        mask="url(#eye-mask)"
+        style="transform:translate(var(--iris-translate))"
+      >
+        <circle
+          cx="0"
+          cy="0"
+          r="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="5"></circle>
+        <circle
+          cx="0"
+          cy="0"
+          r="8"
+          stroke="none"
+          fill="currentColor"
+          style="transform:translate(var(--iris-translate))"></circle>
+      </g>
+    </svg>
+  </button>
+</c-themeswitch>
+
+<script is:inline>
+  let theme = "light";
+  if (
+    typeof localStorage !== "undefined" &&
+    localStorage.getItem("theme") === "dark"
+  ) {
+    theme = "dark";
+  } else if (
+    localStorage.getItem("theme") !== "light" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    theme = "dark";
+  }
+  document.documentElement.setAttribute("data-theme", theme);
+  window.localStorage.setItem("theme", theme);
+</script>
+
+<script>
+  import { animate, inView } from "motion";
+  import { clamp } from "src/lib/number.ts";
+
+  type Vector = [number, number];
+
+  customElements.define(
+    "c-themeswitch",
+    class ThemeSwitch extends HTMLElement {
+      #btn: HTMLButtonElement;
+      #pathes: SVGPathElement[];
+      #stopViewportDetection?: () => void;
+      constructor() {
+        super();
+        this.#btn = this.querySelector("button")!;
+        this.#pathes = Array.from(this.querySelectorAll("path")!);
+      }
+
+      connectedCallback() {
+        this.#btn.addEventListener("click", this.#handleClick);
+        this.#stopViewportDetection = inView(this, () => {
+          document.addEventListener("mousemove", this.#handleMousemove);
+          return () =>
+            document.removeEventListener("mousemove", this.#handleMousemove);
+        });
+      }
+
+      disconnectedCallback() {
+        this.#btn.removeEventListener("click", this.#handleClick);
+        this.#stopViewportDetection?.();
+      }
+
+      #handleMousemove = (e: MouseEvent) => {
+        const mousePosition = [e.clientX, e.clientY];
+        const { left, top, width, height } = this.getBoundingClientRect();
+        const eyePosition: Vector = [left + width * 0.5, top + height * 0.5];
+
+        const vectorBetween: Vector = [
+          mousePosition[0] - eyePosition[0],
+          mousePosition[1] - eyePosition[1],
+        ];
+        const distanceBetween = Math.sqrt(
+          vectorBetween[0] * vectorBetween[0] +
+            vectorBetween[1] * vectorBetween[1]
+        );
+        const direction = [
+          vectorBetween[0] / distanceBetween,
+          vectorBetween[1] / distanceBetween,
+        ];
+        const distanceFactor = clamp(
+          distanceBetween / document.body.clientWidth,
+          0,
+          1
+        );
+        this.style.setProperty(
+          "--iris-translate",
+          `${direction[0] * distanceFactor * 7}%, ${direction[1] * distanceFactor * 8}%`
+        );
+      };
+
+      #handleClick = async () => {
+        await animate(
+          (t) => {
+            this.#setEyeOpening(1 - t);
+          },
+          { duration: 0.3, easing: "ease-out" }
+        ).finished;
+        this.#toggleTheme();
+        await animate(
+          (t) => {
+            this.#setEyeOpening(t);
+          },
+          { duration: 0.3, easing: "ease-in" }
+        ).finished;
+      };
+
+      #toggleTheme() {
+        const newTheme =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      #setEyeOpening(progress: number) {
+        const eyeOffset = 50 * progress;
+        this.#pathes.forEach((el) => {
+          el.setAttribute(
+            "d",
+            `M -45 0 Q 0 -${eyeOffset}, 45 0 Q 0 ${eyeOffset}, -45 0 Z`
+          );
+        });
+      }
+    }
+  );
+</script>
+
+<style>
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+  }
+  svg {
+    font-size: var(--step-3);
+  }
+</style>

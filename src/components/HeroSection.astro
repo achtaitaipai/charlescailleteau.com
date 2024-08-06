@@ -1,0 +1,94 @@
+---
+import ThemeSwitch from "./ThemeSwitch.astro";
+export type Props = {
+  title: string;
+  mail: string;
+};
+const { title, mail } = Astro.props;
+---
+
+<div class="hero">
+  <div class="hero-container wrapper">
+    <header>
+      <div>
+        <h1>{title}</h1>
+        <a href="mailto:slt@charlescailleteau.com">{mail}</a>
+      </div>
+      <ThemeSwitch />
+    </header>
+    <div class="description flow">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero {
+    background: linear-gradient(
+      to right,
+      var(--primary) 50%,
+      var(--surface) 50%
+    );
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-block-end: var(--space-xl);
+    display: flex;
+    animation: opening 1.5s 0.2s both;
+  }
+  .hero-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    gap: var(--space-l);
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--space-xl) var(--space-m);
+    background-color: var(--surface);
+    padding-inline: var(--space-3xs);
+  }
+  header h1 {
+    font-size: var(--step-4);
+    font-size: var(--step-3);
+  }
+  header a {
+    font-size: var(--step--1);
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    max-width: 66ch;
+    align-self: flex-end;
+    padding-inline: var(--space-3xs);
+    padding-block: var(--space-s);
+    background: var(--surface);
+    position: relative;
+  }
+  @media (width > 40rem) {
+    header {
+      padding-inline: var(--space-xs);
+    }
+    header h1 {
+      font-size: var(--step-4);
+    }
+    header a {
+      font-size: var(--step-0);
+    }
+    .description {
+      padding-inline: var(--space-xs);
+    }
+  }
+
+  @keyframes opening {
+    from {
+      clip-path: rect(0% 100% 100% 100%);
+    }
+    to {
+      clip-path: rect(0% 100% 100% 0%);
+    }
+  }
+</style>

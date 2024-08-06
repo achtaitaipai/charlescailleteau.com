@@ -1,0 +1,27 @@
+---
+export type Props = {
+  title: string;
+  description: string;
+  ogImage: string;
+  ogImageAlt: string;
+};
+
+const { title, description, ogImage, ogImageAlt } = Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+<meta name="og:type" content="website" />
+<meta name="og:title" content={title} />
+<meta name="og:locale" content="fr" />
+<meta name="og:description" content={description} />
+<meta name="og:site_name" content="Charles Cailleteau" />
+<meta name="og:image" content={new URL(ogImage, Astro.site).href} />
+<meta name="og:image:alt" content={ogImageAlt} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="Charles Cailleteau" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+<meta name="twitter:image:alt" content={ogImageAlt} />

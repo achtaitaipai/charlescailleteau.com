@@ -1,0 +1,88 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { slugify } from "src/lib/string.ts";
+import Resizer from "./_Resizer.astro";
+
+export type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+
+const loadImage = (n: number) => {
+  const imagePath = `/src/content/assets/screenshots/${slugify(title)}${n}.png`;
+
+  const images = import.meta.glob<{ default: ImageMetadata }>(
+    "src/content/assets/**/*.{jpeg,jpg,png,gif}"
+  );
+  if (!images[imagePath])
+    throw new Error(
+      `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+    );
+  return images[imagePath]();
+};
+---
+
+<c-mobile-site-card>
+  <div class="imageWrapper">
+    <Image src={loadImage(0)} height={500} alt="" style="display: none;" />
+    <Image src={loadImage(1)} height={500} alt="" style="display: none;" />
+    <Image src={loadImage(2)} height={500} alt="" style="display: none;" />
+    <Image src={loadImage(3)} height={500} alt="" style="display: none;" />
+    <Image src={loadImage(4)} height={500} alt="" />
+  </div>
+  <Resizer min={0} max={4} />
+</c-mobile-site-card>
+
+<script>
+  customElements.define(
+    "c-mobile-site-card",
+    class SiteCard extends HTMLElement {
+      #inputElement: HTMLInputElement;
+      #images: HTMLImageElement[];
+      constructor() {
+        super();
+        this.#inputElement = this.querySelector("input")!;
+        this.#images = Array.from(this.querySelectorAll("img"));
+      }
+
+      connectedCallback() {
+        this.#inputElement.addEventListener("input", this.#handleResize);
+      }
+
+      disconnectedCallback() {
+        this.#inputElement.removeEventListener("input", this.#handleResize);
+      }
+
+      #handleResize = () => {
+        const current = this.#inputElement.valueAsNumber;
+        for (let index = 0; index < this.#images.length; index++) {
+          const element = this.#images[index];
+          if (index === current) element.style.removeProperty("display");
+          else element.style.setProperty("display", "none");
+        }
+      };
+    }
+  );
+</script>
+
+<style>
+  c-mobile-site-card {
+    display: block;
+    position: relative;
+    background: var(--surface);
+    border: 2px solid var(--surface);
+  }
+  .imageWrapper {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  img {
+    height: 100%;
+    width: auto;
+    background: var(--surface);
+    margin-inline: auto;
+  }
+</style>

@@ -1,0 +1,159 @@
+---
+import { getEntry } from "astro:content";
+import Desktop from "./_Desktop.astro";
+import { nanoid } from "nanoid";
+import Mobile from "./_Mobile.astro";
+
+export type Props = {
+  slug: string;
+};
+const { slug } = Astro.props;
+const site = (await getEntry("sites", slug))!;
+const { Content } = await site.render();
+
+const descriptionId = nanoid();
+---
+
+<c-site-card>
+  <div class="desktop">
+    <Desktop title={site.data.title} src={site.data.url} />
+  </div>
+  <div class="mobile">
+    <Mobile title={site.data.title} />
+  </div>
+  <div class="mobile"></div>
+  <div class="description" id={descriptionId} style="display: none;">
+    <Content />
+  </div>
+  <button
+    class="more"
+    aria-controls={descriptionId}
+    aria-expanded="false"
+    aria-label="afficher la description"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      width="1em"
+      height="1em"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 4.5v15m7.5-7.5h-15"></path>
+    </svg>
+  </button>
+</c-site-card>
+
+<script>
+  import { inView, animate } from "motion";
+  customElements.define(
+    "c-site-card",
+    class SiteCard extends HTMLElement {
+      #stopViewportDetection?: () => void;
+      #moreBtn: HTMLButtonElement;
+      #moreIcon: SVGElement;
+      #description: HTMLElement;
+      #isOpen = false;
+
+      constructor() {
+        super();
+        this.#moreBtn = this.querySelector("button.more")!;
+        this.#moreIcon = this.#moreBtn.querySelector("svg")!;
+        this.#description = this.querySelector(".description")!;
+      }
+
+      connectedCallback() {
+        this.#stopViewportDetection = inView(this, () => {
+          animate(this, { opacity: [0, 1], y: [200, 0] }, { duration: 0.5 });
+        });
+        this.#moreBtn.addEventListener("click", this.#handleClick);
+      }
+
+      disconnectedCallback() {
+        this.#stopViewportDetection?.();
+        this.#moreBtn.removeEventListener("click", this.#handleClick);
+      }
+
+      #handleClick = () => {
+        this.#isOpen = !this.#isOpen;
+        if (this.#isOpen) this.#openDescription();
+        else this.#closeDescription();
+      };
+
+      #openDescription() {
+        this.#moreBtn.setAttribute("aria-expanded", "true");
+        animate(this.#moreIcon, { rotate: [0, 135] }, { easing: "ease-out" });
+        this.#description.style.removeProperty("display");
+        animate(this.#description, { y: ["-100%", 0] }, { easing: "ease-out" });
+      }
+
+      async #closeDescription() {
+        this.#moreBtn.setAttribute("aria-expanded", "true");
+        animate(this.#moreIcon, { rotate: [-135, 0] }, { easing: "ease-in" });
+        await animate(
+          this.#description,
+          { y: [0, "-100%"] },
+          { easing: "ease-in" }
+        ).finished;
+        this.#description.style.setProperty("display", "none");
+      }
+    }
+  );
+</script>
+
+<style>
+  c-site-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .desktop {
+    display: none;
+    padding: var(--space-xs);
+    background: var(--surface);
+  }
+
+  @media (width > 60rem) {
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+  .description {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding: var(--space-s);
+    padding-block: var(--space-m);
+    overflow-y: auto;
+    min-height: 100%;
+    background: var(--surface);
+    transform-origin: top;
+    @media (width>60rem) {
+      font-size: var(--step-3);
+      line-height: 1.15;
+    }
+  }
+  .more {
+    position: absolute;
+    /* no buggy border */
+    right: -1px;
+    bottom: -1px;
+    background: var(--primary);
+    color: var(--surface);
+    border: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 50% 0 0% 0%;
+    padding: var(--space-3xs);
+    cursor: pointer;
+    font-size: var(--step-2);
+  }
+</style>

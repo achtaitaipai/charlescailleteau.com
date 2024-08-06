@@ -1,0 +1,22 @@
+---
+import Seo from "src/components/Seo.astro";
+import "src/style.css";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <Seo
+      title="Portfolio • Charles Cailleteau"
+      description="Charles Cailleteau est designer et développeur web."
+      ogImage="og-image.png"
+      ogImageAlt="Capture d'écran du site de Charles Cailleteau"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

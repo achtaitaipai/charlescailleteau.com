@@ -1,0 +1,80 @@
+---
+import Resizer from "./_Resizer.astro";
+
+export type Props = {
+  title: string;
+  src: string;
+};
+
+const { title, src } = Astro.props;
+---
+
+<c-desktop-site-card>
+  <div class="iframeWrapper">
+    <iframe {title} {src} frameborder="0"></iframe>
+  </div>
+  <button class="cache" aria-label="Explorer l'aperçu"></button>
+  <Resizer min={0} max={100} />
+</c-desktop-site-card>
+
+<script>
+  customElements.define(
+    "c-desktop-site-card",
+
+    class Iframe extends HTMLElement {
+      #cacheElement: HTMLElement;
+      #inputElement: HTMLInputElement;
+
+      constructor() {
+        super();
+        this.#cacheElement = this.querySelector(".cache")!;
+        this.#inputElement = this.querySelector("input")!;
+      }
+
+      connectedCallback() {
+        this.#cacheElement.addEventListener("click", this.#handleClickCache);
+        this.#inputElement.addEventListener("input", this.#handleResize);
+      }
+
+      disconnectedCallback() {
+        this.#cacheElement.removeEventListener("click", this.#handleClickCache);
+        this.#inputElement.removeEventListener("input", this.#handleResize);
+      }
+
+      #handleClickCache = () => {
+        this.#cacheElement.remove();
+      };
+
+      #handleResize = () => {
+        const size = this.#inputElement.valueAsNumber;
+        this.style.setProperty("--size", (size / 100).toString());
+      };
+    }
+  );
+</script>
+
+<style>
+  c-desktop-site-card {
+    display: block;
+    position: relative;
+  }
+  .iframeWrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  iframe {
+    width: calc((100% - 20rem) * var(--size, 1) + 20rem);
+    height: 100%;
+    margin-inline: auto;
+    display: block;
+    background: var(--surface);
+  }
+  .cache {
+    position: absolute;
+    inset: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+</style>
