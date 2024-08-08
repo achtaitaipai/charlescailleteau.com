@@ -98,11 +98,7 @@ const descriptionId = nanoid();
         this.#moreBtn.setAttribute("aria-expanded", "true");
         animate(this.#moreIcon, { rotate: [0, 135] }, { easing: "ease-out" });
         this.#description.style.removeProperty("display");
-        animate(
-          this.#description,
-          { opacity: [0, 1], y: [-25, 0] },
-          { easing: "ease-out" }
-        );
+        animate(this.#description, { opacity: [0, 1] }, { easing: "ease-out" });
       }
 
       async #closeDescription() {
