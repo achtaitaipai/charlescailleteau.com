@@ -15,7 +15,6 @@ const descriptionId = nanoid();
 ---
 
 <c-site-card>
-  <div class="container">
     <div class="desktop">
       <Desktop title={site.data.title} src={site.data.url} />
     </div>
@@ -47,15 +46,13 @@ const descriptionId = nanoid();
           d="M12 4.5v15m7.5-7.5h-15"></path>
       </svg>
     </button>
-  </div>
 </c-site-card>
 
 <script>
-  import { inView, animate } from "motion";
+  import { animate } from "motion";
   customElements.define(
     "c-site-card",
     class SiteCard extends HTMLElement {
-      #stopViewportDetection?: () => void;
       #container: HTMLElement;
       #moreBtn: HTMLButtonElement;
       #moreIcon: SVGElement;
@@ -71,20 +68,10 @@ const descriptionId = nanoid();
       }
 
       connectedCallback() {
-        this.#container.style.setProperty("opacity", "0");
-        this.#container.style.setProperty("transform", "translateY(200px)");
-        this.#stopViewportDetection = inView(this, () => {
-          animate(
-            this.#container,
-            { opacity: 1, transform: [null, "translateY(0)"] },
-            { delay: 0.15, duration: 0.4 }
-          );
-        });
         this.#moreBtn.addEventListener("click", this.#handleClick);
       }
 
       disconnectedCallback() {
-        this.#stopViewportDetection?.();
         this.#moreBtn.removeEventListener("click", this.#handleClick);
       }
 
@@ -119,11 +106,14 @@ const descriptionId = nanoid();
   c-site-card {
     overflow: hidden;
     display: block;
-  }
-  .container {
     position: relative;
     overflow: hidden;
     width: 100%;
+    animation-fill-mode: both;
+    animation-name: in-view;
+    animation-timing-function: linear;
+    animation-timeline: view();
+    animation-range: entry 30% entry 80%;
   }
   .desktop {
     display: none;
@@ -174,5 +164,15 @@ const descriptionId = nanoid();
     padding: var(--space-3xs);
     cursor: pointer;
     font-size: var(--step-2);
+  }
+  @keyframes in-view {
+    from{
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
