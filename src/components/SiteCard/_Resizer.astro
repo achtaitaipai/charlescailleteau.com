@@ -1,6 +1,4 @@
 ---
-import { nanoid } from "nanoid";
-
 export type Props = {
   min: number;
   max: number;
@@ -8,7 +6,7 @@ export type Props = {
 
 const { min, max } = Astro.props;
 
-const id = nanoid();
+const id = crypto.randomUUID();
 ---
 
 <div class="controls">
