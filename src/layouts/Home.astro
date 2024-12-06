@@ -17,7 +17,7 @@ const sites = (await getCollection("sites")).sort(
     </HeroSection>
     <div class="projects">
       <div class="projects-wrapper flow" style="--flow-space:var(--space-xl);">
-        {sites.map((el) => <SiteCard slug={el.slug} />)}
+        {sites.map((el) => <SiteCard slug={el.id} />)}
       </div>
     </div>
   </main>

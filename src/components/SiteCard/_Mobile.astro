@@ -11,10 +11,10 @@ export type Props = {
 const { title } = Astro.props;
 
 const loadImage = (n: number) => {
-  const imagePath = `/src/content/assets/screenshots/${slugify(title)}${n}.webp`;
+  const imagePath = `/src/assets/screenshots/${slugify(title)}${n}.webp`;
 
   const images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/content/assets/screenshots/*.{jpeg,jpg,png,gif,webp}"
+    "/src/assets/screenshots/*.{jpeg,jpg,png,gif,webp}"
   );
   if (!images[imagePath])
     throw new Error(

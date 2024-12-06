@@ -25,9 +25,9 @@ const slugify = (str) => {
     .replace(/(\s+|-+)/g, "-");
 };
 
-const files = await glob("src/content/sites/*.md");
+const files = await glob("data/sites/*.md");
 
-await mkdir("src/content/assets/screenshots");
+await mkdir("src/assets/screenshots");
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 for await (const filePath of files) {
@@ -48,7 +48,7 @@ for await (const filePath of files) {
   for (let index = 0; index < formats.length; index++) {
     await page.setViewport(formats[index]);
     await page.screenshot({
-      path: `src/content/assets/screenshots/${slugify(title)}${index}.webp`,
+      path: `src/assets/screenshots/${slugify(title)}${index}.webp`,
       type: "webp",
     });
   }

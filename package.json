@@ -8,13 +8,13 @@
     "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
-    "screenshots": "rm -rf src/content/assets/screenshots && node scripts/screenshots.mjs",
+    "screenshots": "rm -rf src/assets/screenshots && node scripts/screenshots.mjs",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.1",
-    "@astrojs/sitemap": "^3.1.6",
-    "astro": "^4.13.1",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.0.3",
     "motion": "^10.18.0",
     "nanoid": "^5.0.7",
     "typescript": "^5.5.4"

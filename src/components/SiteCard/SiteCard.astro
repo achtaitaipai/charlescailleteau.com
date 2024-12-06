@@ -1,5 +1,5 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry,render } from "astro:content";
 import Desktop from "./_Desktop.astro";
 import { nanoid } from "nanoid";
 import Mobile from "./_Mobile.astro";
@@ -9,7 +9,7 @@ export type Props = {
 };
 const { slug } = Astro.props;
 const site = (await getEntry("sites", slug))!;
-const { Content } = await site.render();
+const { Content } = await render(site);
 
 const descriptionId = nanoid();
 ---
