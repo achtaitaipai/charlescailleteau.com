@@ -52,7 +52,6 @@ const descriptionId = crypto.randomUUID();
   customElements.define(
     "c-site-card",
     class SiteCard extends HTMLElement {
-      #container: HTMLElement;
       #moreBtn: HTMLButtonElement;
       #moreIcon: SVGElement;
       #description: HTMLElement;
@@ -60,7 +59,6 @@ const descriptionId = crypto.randomUUID();
 
       constructor() {
         super();
-        this.#container = this.querySelector(".container")!;
         this.#moreBtn = this.querySelector("button.more")!;
         this.#moreIcon = this.#moreBtn.querySelector("svg")!;
         this.#description = this.querySelector(".description")!;
@@ -82,19 +80,19 @@ const descriptionId = crypto.randomUUID();
 
       #openDescription() {
         this.#moreBtn.setAttribute("aria-expanded", "true");
-        animate(this.#moreIcon, { rotate: [0, 135] }, { easing: "ease-out" });
+        animate(this.#moreIcon, { rotate: [0, 135] }, {ease: 'easeOut'});
         this.#description.style.removeProperty("display");
-        animate(this.#description, { opacity: [0, 1] }, { easing: "ease-out" });
+        animate(this.#description, { opacity: [0, 1] }, {ease: 'easeOut'});
       }
 
       async #closeDescription() {
         this.#moreBtn.setAttribute("aria-expanded", "true");
-        animate(this.#moreIcon, { rotate: [-135, 0] }, { easing: "ease-in" });
+        animate(this.#moreIcon, { rotate: [-135, 0] }, {ease: 'easeIn'});
         await animate(
           this.#description,
           { opacity: [1, 0] },
-          { easing: "ease-in" }
-        ).finished;
+          {ease: 'easeIn'}
+        )
         this.#description.style.setProperty("display", "none");
       }
     }

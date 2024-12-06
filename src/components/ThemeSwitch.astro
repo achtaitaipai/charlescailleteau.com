@@ -122,19 +122,17 @@
       };
 
       #handleClick = async () => {
-        await animate(
-          (t) => {
-            this.#setEyeOpening(1 - t);
-          },
-          { duration: 0.3, easing: "ease-out" }
-        ).finished;
+        await animate(1,0,{
+          duration: 0.3,
+          ease: 'easeOut',
+          onUpdate: (t:number)=>this.#setEyeOpening(t)
+        })
         this.#toggleTheme();
-        await animate(
-          (t) => {
-            this.#setEyeOpening(t);
-          },
-          { duration: 0.3, easing: "ease-in" }
-        ).finished;
+        await animate(0,1,{
+          duration: 0.3,
+          ease: 'easeOut',
+          onUpdate: (t:number)=>this.#setEyeOpening(t)
+        })
       };
 
       #toggleTheme() {
